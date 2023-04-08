@@ -17,6 +17,12 @@
   - [ ] CTR模式
   - [ ] GCM模式
 
+# 安装
+```yaml
+dependencies:
+  dart_sm: ^0.0.1
+```
+
 # 使用方法
 ## SM2
 ### 生成密钥对

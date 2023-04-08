@@ -1,0 +1,11 @@
+name: dart_sm
+description: 基于Dart语言实现的国密SM2、SM3、SM4算法。
+version: 0.0.1
+homepage: https://github.com/luckykellan/dart_sm.git
+
+environment:
+  sdk: '>=2.19.0 <3.0.0'
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.21.0

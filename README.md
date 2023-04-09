@@ -89,6 +89,10 @@ String plainText = SM4.decrypt(encryptData, mode: SM4CryptoMode.CBC,iv: 'fedcba9
 String cipherText = SM4.encrypt(data, key: '0123456789abcdeffedcba9876543210');
 String plainText = SM4.encrypt(cipherText, key: '0123456789abcdeffedcba9876543210');
 ```
+
+# 致谢
+* [js版本的国密实现：sm-crypto](https://github.com/JuneAndGreen/sm-crypto)
+
 # 协议
 ```
 Copyright [luckykellan]

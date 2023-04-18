@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:math';
 import 'dart:typed_data';
 import 'sm3.dart';
@@ -190,7 +191,7 @@ class SM2 {
     String checkC3 = SM3.hashBytes([...x2, ...msg, ...y2]);
 
     if (checkC3.toLowerCase() == c3.toLowerCase()) {
-      return String.fromCharCodes(msg);
+      return utf8.decode(msg);
     } else {
       return '';
     }

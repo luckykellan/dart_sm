@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:typed_data';
 
 import 'utils/utils.dart';
@@ -104,7 +105,7 @@ class SM3 {
     if (key != null) {
       return _hmac(data, key);
     }
-    return SMUtils.bytesToHexString(hashBytesToBytes(data.codeUnits));
+    return SMUtils.bytesToHexString(hashBytesToBytes(utf8.encode(data)));
   }
 
   static String hashBytes(List<int> data, {String? key}) {
@@ -131,7 +132,7 @@ class SM3 {
     Uint8List inputBytes;
 
     if (input is String) {
-      inputBytes = Uint8List.fromList(input.codeUnits);
+      inputBytes = Uint8List.fromList(utf8.encode(input));
     } else if (input is List<int>) {
       inputBytes = Uint8List.fromList(input);
     } else {

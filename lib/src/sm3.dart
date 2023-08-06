@@ -13,7 +13,11 @@ class SM3 {
     paddedData.setAll(0, array);
     paddedData[array.length] = 0x80;
 
-    paddedData.buffer.asByteData().setUint64(size - 8, inputLength, Endian.big);
+    // paddedData.buffer.asByteData().setUint64(size - 8, inputLength, Endian.big);
+    final high = (inputLength >> 32) & 0xFFFFFFFF;
+    final low = inputLength & 0xFFFFFFFF;
+    paddedData.buffer.asByteData().setUint32(size - 8, high, Endian.big);
+    paddedData.buffer.asByteData().setUint32(size - 4, low, Endian.big);
 
     int numberOfBlocks = paddedData.length ~/ 64;
 

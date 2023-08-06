@@ -94,7 +94,8 @@ class SM2 {
 
   static String encrypt(String msg, String publicKey,
       {int cipherMode = C1C3C2}) {
-    List<int> msgBytes = SMUtils.hexStringToBytes(SMUtils.utf8ToHexString(msg));
+    //List<int> msgBytes = SMUtils.hexStringToBytes(SMUtils.utf8ToHexString(msg));
+    List<int> msgBytes = utf8.encode(msg);
     ECPointFp publicKeyPoint = _ecParam.curve.decodePointHex(publicKey)!;
 
     final keypair = generateKeyPair();

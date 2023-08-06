@@ -13,7 +13,7 @@ void main() async {
     String publicKey = keypair.publicKey; // 公钥
 
     test('加密和解密', (){
-      String encryptData = SM2.encrypt(data, publicKey, cipherMode: C1C2C3);
+      String encryptData = SM2.encrypt(data, publicKey);
       String decryptData = SM2.decrypt(encryptData, privateKey);
       expect(decryptData, data);
     });

@@ -19,7 +19,7 @@
 # 安装
 ```yaml
 dependencies:
-  dart_sm: ^0.1.4 
+  dart_sm: ^0.1.5
 ```
 
 # 使用方法
